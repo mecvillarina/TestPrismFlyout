@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<FlyoutPage x:Class="PrismFlyoutPage.Views.HomePage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            xmlns:views="clr-namespace:PrismFlyoutPage.Views"
+            xmlns:vm="clr-namespace:PrismFlyoutPage.ViewModels"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:DataType="vm:HomePageViewModel">
+
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Menu">
+            <StackLayout Spacing="10">
+                <Button Command="{Binding OnTapCommand}"
+                        CommandParameter="View1"
+                        Text="View1" />
+                <Button Command="{Binding OnTapCommand}"
+                        CommandParameter="View2"
+                        Text="View2" />
+                <Button Command="{Binding OnTapCommand}"
+                        CommandParameter="View3"
+                        Text="View2" />
+            </StackLayout>
+        </ContentPage>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views:MainPage />
+            </x:Arguments>
+        </NavigationPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>
